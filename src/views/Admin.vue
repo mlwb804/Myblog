@@ -1,8 +1,17 @@
 <template>
     <div>
-        <router-link to="/admin">admin-home</router-link>
-        <router-link to="/admin/add">admin-add</router-link>
+        <router-link to="/admin" class="home"><b-button>文章列表</b-button></router-link>
+        <router-link to="/admin/add" class="add"><b-button>新增文章</b-button></router-link>
         <router-view />
     </div>
     
 </template>
+
+<style lang="scss" scoped>
+    div{
+       .home,
+       .add{
+           float: right;
+       }
+    }
+</style>

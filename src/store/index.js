@@ -43,6 +43,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    // 調用api文件
     fetchArticles: async ({
       commit
     }) => {
@@ -58,6 +59,7 @@ export default new Vuex.Store({
       })
       commit('fetchArticles', payload)
     },
+  
     changeSearchKey: ({
       commit
     }, payload) => {
