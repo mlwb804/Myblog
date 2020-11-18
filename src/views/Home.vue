@@ -102,4 +102,11 @@ export default {
        }
   }
   
+  @media screen and (max-width:376px) {
+    .home{
+      article{
+        width:200px;
+      }
+    }
+  }
 </style>

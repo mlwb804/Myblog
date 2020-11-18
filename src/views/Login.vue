@@ -25,7 +25,8 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-button @click.prevent="routerToAdmin" type="submit" variant="primary">Submit</b-button>
+      <b-button @click.prevent="routerToAdmin" type="submit" variant="primary">登入</b-button>
+      <b-button @click="reset" type="submit" variant="danger">清除</b-button>
     </b-form>
   </div>
 </template>
@@ -43,11 +44,22 @@
       methods:{
         routerToAdmin: function(){
             this.$router.push({name:"Admin-Home"})
+        },
+        reset: function() {
+          this.form.account= "";
+          this.form.password= ""
         }
       }
     }
 </script>
 
 <style lang="scss" scoped>
-  
+  div{
+    width: 70%;
+    margin: auto;
+    
+    h1{
+      margin-top: 10rem;
+    }
+  }
 </style>
