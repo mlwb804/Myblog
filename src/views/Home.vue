@@ -13,7 +13,9 @@
     <section class="home-side-bar">
       <SideBar :articles="articles" />
     </section>
-
+    <section>
+      <Icon />
+    </section>
   </div>
 </template>
 
@@ -21,12 +23,15 @@
   import axios from 'axios';
   import SideBar from '@/components/SideBar';
   import { mapState, mapGetters } from 'vuex';
+  import Icon from "@/components/Icon.vue";
+
 
 
 export default {
   name: 'Home',
     components:{
       SideBar, 
+      Icon,
     },
     methods: {
       routerToArticle: function(id) {
