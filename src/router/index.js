@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home'
-import About from '@/views/About'
-import Article from '@/views/Article'
-import Login from '@/views/Login'
-import Admin from '@/views/Admin'
-import Add from '@/views/Admin/Add'
-import AdminHome from '@/views/Admin/AdminHome'
-import NotFound404 from '@/views/NotFound404'
+// import Home from '../views/Home'
+
+// import Article from '@/views/Article'
+// import Login from '@/views/Login'
+// import Admin from '@/views/Admin'
+// import Add from '@/views/Admin/Add'
+// import AdminHome from '@/views/Admin/AdminHome'
+// import NotFound404 from '@/views/NotFound404'
 
 
 
@@ -18,49 +18,66 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () =>
+    import('@/views/Home')
   },
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () =>
+    import('@/views/About')
+    // component: About
   },
   {
     path: '/article/:id',
     name: 'Article',
-    component: Article
+    component: () =>
+    import('@/views/Article')
+    // component: Article
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () =>
+    import('@/views/Login')
+    // component: Login
   },
   {
     path: "/admin",
     name: 'Admin',
-    component: Admin,
+    component: () =>
+    import('@/views/Admin'),
+    // component: Admin,
     children: [ 
       {
       path: '/',
       name: 'Admin-Home',
-      component: AdminHome
+      component: () =>
+    import('@/views/Admin/AdminHome')
+      // component: AdminHome
       },
     {
       path: 'add',
       name: 'Admin-Add',
-      component: Add
+      component: () =>
+    import('@/views/Admin/Add')
+      // component: Add
      },
       {
       path: 'edit/:id',
       name: 'Admin-Edit',
-      component: Add
+      component: () =>
+    import('@/views/Admin/Add')
+      // component: Add
      },
     ]
   },
    {
       path: '*',
       name: 'NotFound404',
-      component: NotFound404
+      component: () =>
+    import('@/views/NotFound404')
+      // component: NotFound404
      },
     
 ]
