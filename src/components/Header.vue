@@ -1,7 +1,7 @@
 <template>
     <div>
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">MyBlog</b-navbar-brand>
+    <b-navbar-brand to="/" href="#">MyBlog</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -61,6 +61,7 @@ export default {
 </script>
 
 <style scoped>
+
   .nav-item{
     margin-right: 2rem;
     color:#ccc;

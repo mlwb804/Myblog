@@ -34,12 +34,10 @@ export default {
         border-radius: 16px;
         height: 100%;
         padding-top:1rem;
-        padding-left: .5rem;
       
       h4{
           width: 100%;
           display: inline-block;
-          text-align: left;
           text-indent: 1rem;
           line-height: 1.5rem;
 
@@ -51,15 +49,21 @@ export default {
       }
       ul{
           li{
-              text-align: left;
-              margin: 5px 0;
-              transition: .3s;
-              cursor: pointer;
+            list-style: none;
+            text-align: left;
+            margin: 5px 0 5px -1.3rem;
+            transition: .3s;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            cursor: pointer;
 
-              &:hover{
-                  text-decoration-line: underline;
-              }
-          }
-      }
+
+            &:hover{
+                text-decoration-line: underline;
+                color:rgb(15, 184, 43);
+            }
+        }
+        }
     }    
 </style>

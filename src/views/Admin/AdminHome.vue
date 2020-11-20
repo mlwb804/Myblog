@@ -20,12 +20,14 @@
        
        </b-table>
        </div>
+       <!-- <UserInfo /> -->
     </div>
 </template>
 
 <script>
     import { mapState, mapActions } from 'vuex';
- 
+    import UserInfo from '@/components/UserInfo';
+  
 export default {
     data () {
         return{
@@ -36,6 +38,9 @@ export default {
                 {key:"id", label:"修改/刪除"},
             ]
         }
+    },
+    components:{
+        UserInfo,
     },
     methods: {
         ...mapActions(['fetchArticles', 'deleteArticle']),

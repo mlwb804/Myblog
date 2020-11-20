@@ -16,16 +16,20 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-2" label="登入密碼" label-for="input-2">
+      <b-form-group
+       id="input-group-2" 
+       label="登入密碼" 
+       label-for="input-2">
         <b-form-input
           id="input-2"
           type="password"
           v-model="form.password"
           required
+          placeholder="Enter Password"
         ></b-form-input>
       </b-form-group>
 
-      <b-button @click.prevent="routerToAdmin" type="submit" variant="primary">登入</b-button>
+      <b-button @click.prevent="login" type="submit" variant="primary">登入</b-button>
       <b-button @click="reset" type="submit" variant="danger">清除</b-button>
     </b-form>
   </div>
@@ -37,17 +41,27 @@
             return{
                 form:{
                     account: "",
-                    password: ""
+                    password: "",
                 }
             }
-        },
+        }, 
       methods:{
-        routerToAdmin: function(){
-            this.$router.push({name:"Admin-Home"})
-        },
+        // routerToAdmin: function(){
+        //     this.$router.push({name:"Admin-Home"})
+        // },
         reset: function() {
           this.form.account= "";
-          this.form.password= ""
+          this.form.password= "";
+        },
+        login: function(){
+          if( this.form.account == 'test' && this.form.password == 'test123' ){
+            localStorage.setItem('token', 'ImLogin');
+            this.$router.push({name:"Admin-Home"});
+          } else{
+            alert('login failed');
+            this.form.account= "";
+            this.form.password= "";
+          }
         }
       }
     }

@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <section calss="home-articles">
+ 
+    <div calss="home-articles">
       <article
         v-for="(art, index) in filterBySearchKey"
         :key="index"
@@ -9,21 +10,20 @@
         <i> {{art.date | toDate}}</i>
         <span> {{art.content | subContent }} </span>
       </article>
-    </section>
+    </div>
     <section class="home-side-bar">
       <SideBar :articles="articles" />
     </section>
-    <section>
-      <Icon />
-    </section>
+   
   </div>
+
 </template>
 
 <script>
   import axios from 'axios';
   import SideBar from '@/components/SideBar';
   import { mapState, mapGetters } from 'vuex';
-  import Icon from "@/components/Icon.vue";
+
 
 
 
@@ -31,7 +31,6 @@ export default {
   name: 'Home',
     components:{
       SideBar, 
-      Icon,
     },
     methods: {
       routerToArticle: function(id) {
@@ -44,7 +43,7 @@ export default {
     },
     filters: {
       subContent: (content) => {
-        return content.substring(0,150);
+        return content.substring(0,80);
       },
       toDate: timestamp => {
         const date = new Date(timestamp);
@@ -64,6 +63,8 @@ export default {
 
 <style lang="scss" scoped>
  
+
+
  
   .home{
     display: flex;
@@ -106,12 +107,15 @@ export default {
          height: calc(100vh-56px);
        }
   }
-  
-  @media screen and (max-width:376px) {
-    .home{
-      article{
-        width:200px;
-      }
-    }
+@media screen and(max-width: 376px) {
+  .home{
+    article{
+    width: 90vw;
   }
+  }
+  .home-side-bar{
+    display: none;
+  }
+}
+ 
 </style>

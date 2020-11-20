@@ -14,6 +14,7 @@ import axios from 'axios';
 
 
 
+
 export default {
     mounted() {
         const id = this.$route.params.id;
