@@ -6,7 +6,7 @@
             <li
                 v-for="(art, index) in articles"
                 :key="index"
-                @click="routerToArticle(art, id)"            
+                @click="routerToArticle(art.id)"            
             >{{ art.title }} </li>
         </ul>
     </div>

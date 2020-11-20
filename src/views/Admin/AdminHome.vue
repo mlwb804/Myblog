@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="container">
+        <div class="row">
        <b-table :fields="fields" :items="articles">
         <template v-slot:cell(date)="data">
            {{ data.value | toDate }}
@@ -18,6 +19,7 @@
        </template>
        
        </b-table>
+       </div>
     </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
     },
     filters: {
       subContent: (content) => {
-        return content.substring(0,80)+"...";
+        return content.substring(0,50)+"...";
       },
       toDate: timestamp => {
         const date = new Date(timestamp);

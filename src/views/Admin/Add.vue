@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <b-form>
       <b-form-group
         id="input-group-1"
@@ -24,8 +24,8 @@
             id="textarea"
             v-model="formData.content"
             placeholder="Enter something..."
-            rows="3"
-            max-rows="6"
+            rows="8"
+            max-rows="10"
     >
     </b-form-textarea>
       </b-form-group>
@@ -41,7 +41,7 @@
        v-if="!submited"
        @click.prevent="resetFormData"
        variant="danger"
-       >重置</b-button>
+       >清除</b-button>
       <b-spinner v-else label="Spinning"></b-spinner>
     </b-form>
   </div>
@@ -104,9 +104,13 @@
         this.formData.title = this.filterById.title
         this.formData.content = this.filterById.content
       },
-      // articleChanged: function() {
-      //   this.$router.push({ name:'Admin-Home' })
-      // }
+      articleChanged: function() {
+        this.$router.push({ name:'Admin-Home' })
+      }
     },
 }
 </script>
+
+<style lang="scss" scoped>
+  
+</style>

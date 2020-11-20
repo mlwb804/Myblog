@@ -9,9 +9,9 @@
 
 <style lang="scss" scoped>
     div{
-       .home,
-       .add{
-           float: right;
+      
+       .home{
+           margin-right: .2rem;
        }
     }
 </style>

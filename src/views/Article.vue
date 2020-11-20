@@ -1,15 +1,18 @@
 <template>
+    <div>
     <article v-if="articles">
         <h2> {{ filterById.title }} </h2>
         <i>{{filterById.date | toDate}}</i>
         <span v-html="filterById.content" ></span>
-
-    </article>        
+    </article> 
+    </div>     
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-import axios from 'axios'
+import { mapGetters, mapState } from 'vuex';
+import axios from 'axios';
+
+
 
 export default {
     mounted() {
@@ -44,7 +47,8 @@ export default {
         let min = (Array(2).join("0") + date.getMinutes()).slice(-2);
         return `${Y}/${M + 1}/${D} ${H}:${min}`;
       }
-    }
+    },
+  
 }
 </script>
 
