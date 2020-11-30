@@ -20,7 +20,7 @@
        
        </b-table>
        </div>
-       <!-- <UserInfo /> -->
+       <UserInfo />
     </div>
 </template>
 

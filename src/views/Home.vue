@@ -107,7 +107,7 @@ export default {
          height: calc(100vh-56px);
        }
   }
-@media screen and(max-width: 376px) {
+@media screen and(max-width: 450px) {
   .home{
     article{
     width: 90vw;
