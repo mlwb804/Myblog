@@ -1,11 +1,12 @@
 <template>
-    <div class="row">
-        <h3 class="col-6">User name:</h3>
-        <h3 class="col-4"> {{ userName }} </h3>
-        <b-button 
-        class="col-2"
-        @click.prevent="loginOut">登出</b-button>
+    <div>
+            <h5>User name:</h5>
+            <h5> {{ userName }} </h5>
+            <button 
+            @click.prevent="loginOut">登出
+            </button>
     </div>
+
 </template>
 
 <script>
@@ -26,7 +27,17 @@ export default {
 
 <style lang="scss" scoped>
     div{
-  
-      
+        display: flex;
+        
+        h5{
+            margin-right: 10px;
+        }
+        >button{
+            border: none;
+            border-radius: 10px;
+            background-color: #fff;
+            height: 20px;
+
+        }
     }
 </style>

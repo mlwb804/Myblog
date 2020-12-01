@@ -50,6 +50,7 @@
 <script>
     import { mapState, mapActions, mapGetters } from 'vuex';
 
+    CKEDITOR.replace( 'editor1' );
     export default {
     computed: {
         ...mapState(['account', 'articleChanged' ]),

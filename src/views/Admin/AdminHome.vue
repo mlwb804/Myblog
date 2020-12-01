@@ -20,13 +20,11 @@
        
        </b-table>
        </div>
-       <UserInfo />
     </div>
 </template>
 
 <script>
     import { mapState, mapActions } from 'vuex';
-    import UserInfo from '@/components/UserInfo';
   
 export default {
     data () {
@@ -39,9 +37,7 @@ export default {
             ]
         }
     },
-    components:{
-        UserInfo,
-    },
+
     methods: {
         ...mapActions(['fetchArticles', 'deleteArticle']),
         editArticle: function( id ){
@@ -54,6 +50,7 @@ export default {
             }
         }
     },
+
     computed: {
         ...mapState(['account', 'articles']),
     },
